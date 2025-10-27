@@ -5,7 +5,7 @@ import os
 # Listas para armazenar os dados (como um banco de dados simples)
 clientes = []
 contas = []
-ARQUIVO_DADOS = "banco_dados.json"
+ARQUIVO_BANCO = "banco_banco.json"
 
 def salvar_dados(): # Salva os dados no arquivo JSON
     dados = {
@@ -39,14 +39,14 @@ def carregar_dados(): # Carrega os dados do arquivo JSON
         contas.clear()
         salvar_dados()
 
-def obter_texto(mensagem, obrigatorio=True): # Função auxiliar para obter texto do usuário"""
+def obter_texto(mensagem, obrigatorio=True): # Função auxiliar para obter texto do usuário
     while True:
         texto = input(mensagem).strip()
         if texto or not obrigatorio:
             return texto.title() if texto else ""
         print("❌ Este campo é obrigatório!")
 
-def obter_numero(mensagem, tipo=int): # Função auxiliar para obter números do usuário"""
+def obter_numero(mensagem, tipo=int): # Função auxiliar para obter números do usuário
     while True:
         try:
             valor = input(mensagem).strip()
@@ -54,7 +54,7 @@ def obter_numero(mensagem, tipo=int): # Função auxiliar para obter números do
         except ValueError:
             print("❌ Digite apenas números!")
 
-def cadastrar_cliente(): # Cadastra um novo cliente"""
+def cadastrar_cliente(): # Cadastra um novo cliente
     print("\n=== 👤 CADASTRO DE CLIENTE ===")
     
     # Dados básicos
@@ -89,13 +89,13 @@ def cadastrar_cliente(): # Cadastra um novo cliente"""
     print(f"✅ Cliente {nome} cadastrado com sucesso!")
     salvar_dados()
 
-def buscar_cliente_por_cpf(cpf): # Busca cliente pelo CPF"""
+def buscar_cliente_por_cpf(cpf): # Busca cliente pelo CPF
     for cliente in clientes:
         if cliente["cpf"] == cpf:
             return cliente
     return None
 
-def criar_conta(): # cria uma nova conta para um cliente"""
+def criar_conta(): # cria uma nova conta para um cliente
     print("\n=== 🏦 CRIAR CONTA ===")
     
     cpf = input("CPF do cliente: ").strip()
@@ -122,13 +122,13 @@ def criar_conta(): # cria uma nova conta para um cliente"""
     print(f"👤 Titular: {cliente['nome']}")
     salvar_dados()
 
-def buscar_conta(numero): # Busca conta pelo número"""
+def buscar_conta(numero): # Busca conta pelo número
     for conta in contas:
         if conta["numero"] == numero:
             return conta
     return None
 
-def depositar(): # Realiza depósito em uma conta"""
+def depositar(): # Realiza depósito em uma conta
     print("\n=== 💰 DEPÓSITO ===")
     
     numero_conta = obter_numero("Número da conta: ")
@@ -159,8 +159,8 @@ def depositar(): # Realiza depósito em uma conta"""
     print(f"✅ Depósito realizado!")
     print(f"💰 Novo saldo: R$ {conta['saldo']:.2f}")
     salvar_dados()
-
-def sacar(): # Realiza saque de uma conta"""
+    
+def sacar(): # Realiza saque de uma conta
     print("\n=== 💸 SAQUE ===")
     
     numero_conta = obter_numero("Número da conta: ")
@@ -196,7 +196,7 @@ def sacar(): # Realiza saque de uma conta"""
     print(f"💰 Saldo atual: R$ {conta['saldo']:.2f}")
     salvar_dados()
 
-def exibir_extrato(): # Exibe o extrato de uma conta"""
+def exibir_extrato(): # Exibe o extrato de uma conta
     print("\n=== 📄 EXTRATO ===")
     
     numero_conta = obter_numero("Número da conta: ")
@@ -241,7 +241,7 @@ def listar_contas(): # Lista todas as contas"""
         print(f"💰 Saldo: R$ {conta['saldo']:.2f}")
         print("-" * 30)
 
-def menu_principal(): # Exibe o menu principal"""
+def menu_principal(): # Exibe o menu principal
     carregar_dados()
     
     while True:
