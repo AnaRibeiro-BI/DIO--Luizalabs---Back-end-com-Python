@@ -3,10 +3,47 @@ import json
 import os
 
 Class Cliente:
+def __init__(self, endereco):
+    sefl.endereco = numero
+    sefl.contas = []
+
+def realizar_transacao(self. conta, transacao):
+    transacao.registrar(conta
+
+def adicionar_conta(self, conta):
+    self.conta.append(conta)
 
 Class PessoaFisica(Cliente):
+def __init__(self, nome, data_nascimento, cpf):
+    endereco():
+    super()__init__(endereco)
+    self.nome = nome
+    self.data_nascimento = data_nascimento
+    self.cpf = cpf
 
-Class ContaCorrente(Conta):
+Class Conta:
+def__init__(self, numero, cliente): 
+self._saldo = 0
+self._numero = numero
+self._agencia = "0001"
+self._cliente = cliente
+self._historico = Historico()
+
+@classmethod
+def nova_conta(cls, cliente, numeor):
+    return self._saldo
+
+@property
+def numeri(self)
+return self._numero
+
+@property
+def agencia(self):
+    return self._agencia
+
+@property
+def clientes(self)
+return self._cliente
 
 Class Historico: 
 
