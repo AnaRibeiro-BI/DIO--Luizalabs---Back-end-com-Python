@@ -27,7 +27,7 @@ self._saldo = 0
 self._numero = numero
 self._agencia = "0001"
 self._cliente = cliente
-self._historico = Historico()
+self._historico = historico()
 
 # @classmethod é um 'decorador' python utilizado para definir atributos
 @classmethod  
