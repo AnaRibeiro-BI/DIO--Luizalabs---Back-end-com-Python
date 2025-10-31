@@ -7,18 +7,15 @@
 # Uma única palavra indicando a categoria do gadget: “tablet”, “phone”, “notebook” ou “unknown”.
 
 def identificar_categoria_gadget(codigo):
-    """
-    Recebe uma string 'codigo' e retorna a categoria associada:
-    - 'T': tablet
-    - 'P': phone
-    - 'N': notebook
-    Se não corresponder, retorna 'unknown'.
-    """
+    #Recebe uma string 'codigo' e retorna a categoria associada:
+    #- 'T': tablet
+    #- 'P': phone
+    #- 'N': notebook
+    # Se não corresponder, retorna 'unknown'.
+   
     # TODO: Implemente a lógica para identificar a categoria do gadget
     # Dica: Verifique a primeira letra do código para determinar a categoria
     # Tipo esperado: 'codigo' é uma string não vazia
-
-    pass  # Remova este pass ao implementar a solução
 
 # Leitura da entrada (espera-se uma string representando o código do gadget)
 codigo_gadget = input().strip()

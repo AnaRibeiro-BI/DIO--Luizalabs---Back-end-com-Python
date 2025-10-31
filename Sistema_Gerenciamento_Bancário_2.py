@@ -2,7 +2,7 @@ from datetime import datetime
 import json
 import os
 
-Class Cliente:
+class Cliente:
 def __init__(self, endereco):
     sefl.endereco = numero
     sefl.contas = []
@@ -13,7 +13,7 @@ def realizar_transacao(self. conta, transacao):
 def adicionar_conta(self, conta):
     self.conta.append(conta)
 
-Class PessoaFisica(Cliente):
+class PessoaFisica(Cliente):
 def __init__(self, nome, data_nascimento, cpf):
     endereco():
     super()__init__(endereco)
@@ -21,7 +21,7 @@ def __init__(self, nome, data_nascimento, cpf):
     self.data_nascimento = data_nascimento
     self.cpf = cpf
 
-Class Conta:
+class Conta:
 def__init__(self, numero, cliente): 
 self._saldo = 0
 self._numero = numero
@@ -29,8 +29,9 @@ self._agencia = "0001"
 self._cliente = cliente
 self._historico = Historico()
 
-@classmethod
-def nova_conta(cls, cliente, numeor):
+# @classmethod é um 'decorador' python utilizado para definir atributos
+@classmethod  
+def nova_conta(cls, cliente, numeor): # cls sempre é primeiro parâmetro
     return self._saldo
 
 @property
@@ -45,13 +46,64 @@ def agencia(self):
 def clientes(self)
 return self._cliente
 
-Class Historico: 
+@property
+def historici(self):
+    return self._historico
 
-Class Transacao(ABC):
+def sacar(self, valor):
+    saldo = self.saldo
+    excedeu_saldo = valor > saldo
 
-Class Saque(Transacao):
+    if excedeu_saldo:
+        print("\n Operação Falhou! Você não possui saldo suficiente.")
 
-Class Deposito(Transacao):
+        elif valor > 0: 
+            self._saldo -= valor
+            print("\n Saque realizado com sucesso.")
+
+        else:
+            print("\n Operação falhou. O valor informado é inválido.")
+
+def depositar(self, valor):
+    if valor >0:
+        self._saldo += valor
+        print("\n ----- Saque realizado com sucesso! -----")
+        return True
+
+    else: 
+    print("\n Operação falhou. O valor informado é inválido.")  
+    return False
+
+class contacorrente(conta):
+def __init__(self, numero, cliente, limite=500, limite_saque=3)
+super()__init__(numero, cliente)
+self.limite = limite
+self.limite_saque = limite_saque
+
+def sacar(self, valor):
+    numero_sauqes = len([transacao for transacao in self.historico.transacoes if transacao["tipo"] == saque.__name__])
+    excedeu_limite = valor > self.limite
+    excedeu_saque = numero_saque >= self.limite_saque
+
+    if excedeu_limite:
+        print("\n Operação falhou. O valor de saque excede o limite.")
+    
+    elif excedeu_saque:
+    print("\n Operação falhou. Número maximo de saque foi atingido.")
+
+    else:
+    return super()sacar(valor)
+
+    return False
+
+
+class Historico: 
+
+class Transacao(ABC):
+
+class Saque(Transacao):
+
+class Deposito(Transacao):
 
 
 
